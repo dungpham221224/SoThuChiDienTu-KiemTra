@@ -23,9 +23,9 @@ namespace SoThuChiDienTu_KiemTra.GUI
 
         }
 
-        private void frmCTGiaoDichChi_Load(object sender, EventArgs e)
+        private void dgvGiaoDichChi_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // tim kakak
+
         }
     }
 }

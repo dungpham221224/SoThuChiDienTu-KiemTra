@@ -53,12 +53,6 @@
     <Compile Include="DTO\TaiKhoanDTO.cs" />
     <Compile Include="DTO\TaiKhoanNganHangDTO.cs" />
     <Compile Include="DTO\ThuDTO.cs" />
-    <Compile Include="frmTaiKhoanNganHang.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmTaiKhoanNganHang.Designer.cs">
-      <DependentUpon>frmTaiKhoanNganHang.cs</DependentUpon>
-    </Compile>
     <Compile Include="GUI\FRMChinh.cs">
       <SubType>Form</SubType>
     </Compile>

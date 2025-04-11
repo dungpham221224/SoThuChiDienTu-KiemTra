@@ -8,25 +8,25 @@ namespace SoThuChiDienTu_KiemTra.DTO
 {
     public class ThuDTO
     {
-        int id;
+        string taiKhoan;
         string tenThu;
         int soTien;
         DateTime thoiGian;
         string loaiThu;
-        public int Id { get => id; set => id = value; }
+
+        public string TaiKhoan { get => taiKhoan; set => taiKhoan = value; }
         public string TenThu { get => tenThu; set => tenThu = value; }
         public int SoTien { get => soTien; set => soTien = value; }
         public DateTime ThoiGian { get => thoiGian; set => thoiGian = value; }
         public string LoaiThu { get => loaiThu; set => loaiThu = value; }
         public ThuDTO() { }
-        public ThuDTO(int id, string tenThu, int soTien, DateTime thoiGian, string loaiThu)
+        public ThuDTO(string taiKhoan, string tenThu, int soTien, DateTime thoiGian, string loaiThu)
         {
-            this.id = id;
+            this.taiKhoan = taiKhoan;
             this.tenThu = tenThu;
             this.soTien = soTien;
             this.thoiGian = thoiGian;
             this.loaiThu = loaiThu;
         }
-
     }
 }

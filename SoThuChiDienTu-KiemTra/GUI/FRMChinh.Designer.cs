@@ -97,7 +97,7 @@ namespace SoThuChiDienTu_KiemTra
             this.btnTaiKhoan.ForeColor = System.Drawing.Color.White;
             this.btnTaiKhoan.Image = global::SoThuChiDienTu_KiemTra.Properties.Resources.folder;
             this.btnTaiKhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTaiKhoan.Location = new System.Drawing.Point(0, 404);
+            this.btnTaiKhoan.Location = new System.Drawing.Point(-3, 442);
             this.btnTaiKhoan.Name = "btnTaiKhoan";
             this.btnTaiKhoan.Size = new System.Drawing.Size(181, 65);
             this.btnTaiKhoan.TabIndex = 0;
@@ -115,7 +115,7 @@ namespace SoThuChiDienTu_KiemTra
             this.btnThongKe.ForeColor = System.Drawing.Color.White;
             this.btnThongKe.Image = global::SoThuChiDienTu_KiemTra.Properties.Resources.pie_chart;
             this.btnThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThongKe.Location = new System.Drawing.Point(0, 307);
+            this.btnThongKe.Location = new System.Drawing.Point(0, 371);
             this.btnThongKe.Name = "btnThongKe";
             this.btnThongKe.Padding = new System.Windows.Forms.Padding(0, 0, 6, 0);
             this.btnThongKe.Size = new System.Drawing.Size(181, 65);
@@ -134,7 +134,7 @@ namespace SoThuChiDienTu_KiemTra
             this.btnTimKiem.ForeColor = System.Drawing.Color.White;
             this.btnTimKiem.Image = global::SoThuChiDienTu_KiemTra.Properties.Resources.seo;
             this.btnTimKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTimKiem.Location = new System.Drawing.Point(3, 210);
+            this.btnTimKiem.Location = new System.Drawing.Point(0, 271);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Padding = new System.Windows.Forms.Padding(0, 0, 12, 0);
             this.btnTimKiem.Size = new System.Drawing.Size(181, 74);

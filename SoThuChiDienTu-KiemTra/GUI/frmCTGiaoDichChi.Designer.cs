@@ -82,6 +82,7 @@ namespace SoThuChiDienTu_KiemTra.GUI
             this.dgvGiaoDichChi.Size = new System.Drawing.Size(658, 421);
             this.dgvGiaoDichChi.TabIndex = 3;
             this.dgvGiaoDichChi.TabStop = false;
+            this.dgvGiaoDichChi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGiaoDichChi_CellContentClick);
             // 
             // MaGiaoDich
             // 
@@ -216,7 +217,6 @@ namespace SoThuChiDienTu_KiemTra.GUI
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCTGiaoDichChi";
             this.Text = "frmTrangChu";
-            this.Load += new System.EventHandler(this.frmCTGiaoDichChi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGiaoDichChi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

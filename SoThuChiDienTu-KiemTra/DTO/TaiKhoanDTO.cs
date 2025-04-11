@@ -8,8 +8,7 @@ namespace SoThuChiDienTu_KiemTra.DTO
 {
     public class TaiKhoanDTO
     {
-        int userId;
-        public string tendangnhap;
+        public string taikhoan;
 
         public string matkhau;
 
@@ -26,9 +25,7 @@ namespace SoThuChiDienTu_KiemTra.DTO
         public string huyen;
 
         public string tinh;
-
-        public int userId1 { get => userId; set => userId = value; }
-        public string Tendangnhap { get => tendangnhap; set => tendangnhap = value; }
+        public string Taikhoan { get => taikhoan; set => taikhoan = value; }
         public string Matkhau { get => matkhau; set => matkhau = value; }
         public string Gioitinh { get => gioitinh; set => gioitinh = value; }
         public string Sdt { get => sdt; set => sdt = value; }
@@ -42,10 +39,9 @@ namespace SoThuChiDienTu_KiemTra.DTO
 
         public TaiKhoanDTO() { }
 
-        public TaiKhoanDTO(int userId, string tendangnhap, string matkhau, string hoten, string gioitinh, string sdt, string diachi, string loaitaikhoan, DateTime ngaysinh, string huyen, string tinh)
+        public TaiKhoanDTO( string taikhoan, string matkhau, string hoten, string gioitinh, string sdt, string diachi, string loaitaikhoan, DateTime ngaysinh, string huyen, string tinh)
         {
-            this.userId = userId;
-            this.tendangnhap = tendangnhap;
+            this.taikhoan = taikhoan;
             this.matkhau = matkhau;
             this.gioitinh = gioitinh;
             this.sdt = sdt;
@@ -56,14 +52,5 @@ namespace SoThuChiDienTu_KiemTra.DTO
             this.tinh = tinh;
         }
 
-        public TaiKhoanDTO(string tendangnhap, string hoten, string gioitinh, string sdt, string diachi, string loaitaikhoan, DateTime ngaysinh)
-        {
-            this.tendangnhap = tendangnhap;
-            this.gioitinh = gioitinh;
-            this.sdt = sdt;
-            this.diachi = diachi;
-            this.loaitaikhoan = loaitaikhoan;
-            this.ngaysinh = ngaysinh;
-        }
     }
 }
