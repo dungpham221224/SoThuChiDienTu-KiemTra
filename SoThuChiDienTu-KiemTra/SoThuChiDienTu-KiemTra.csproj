@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D17554E9-96D7-4396-9AC0-F021496C8C1F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SoThuChiDienTu_KiemTra</RootNamespace>
+    <AssemblyName>SoThuChiDienTu-KiemTra</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\TaiKhoanDAO.cs" />
+    <Compile Include="DAO\TaiKhoanNganHangDAO.cs" />
+    <Compile Include="DTO\ChiDTO.cs" />
+    <Compile Include="DTO\TaiKhoanDTO.cs" />
+    <Compile Include="DTO\TaiKhoanNganHangDTO.cs" />
+    <Compile Include="DTO\ThuDTO.cs" />
+    <Compile Include="frmTaiKhoanNganHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTaiKhoanNganHang.Designer.cs">
+      <DependentUpon>frmTaiKhoanNganHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\FRMChinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FRMChinh.Designer.cs">
+      <DependentUpon>FRMChinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmCTGiaoDichChi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmCTGiaoDichChi.Designer.cs">
+      <DependentUpon>frmCTGiaoDichChi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmDangKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmDangKy.Designer.cs">
+      <DependentUpon>frmDangKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmDangNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmDangNhap.Designer.cs">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmTaiKhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmTaiKhoan.Designer.cs">
+      <DependentUpon>frmTaiKhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmThayMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmThayMatKhau.Designer.cs">
+      <DependentUpon>frmThayMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmTrangChu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmTrangChu.Designer.cs">
+      <DependentUpon>frmTrangChu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\FRMChinh.resx">
+      <DependentUpon>FRMChinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmCTGiaoDichChi.resx">
+      <DependentUpon>frmCTGiaoDichChi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmDangKy.resx">
+      <DependentUpon>frmDangKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmDangNhap.resx">
+      <DependentUpon>frmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmTaiKhoan.resx">
+      <DependentUpon>frmTaiKhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmThayMatKhau.resx">
+      <DependentUpon>frmThayMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmTrangChu.resx">
+      <DependentUpon>frmTrangChu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="resources\4611434_1bm8dFO.gif" />
+    <None Include="resources\money-bag1.png" />
+    <None Include="resources\money1.png" />
+    <None Include="resources\calendar1.png" />
+    <None Include="resources\exit1.png" />
+    <None Include="resources\folder1.png" />
+    <None Include="resources\pie-chart2.png" />
+    <None Include="resources\seo1.png" />
+    <None Include="resources\home %281%291.png" />
+    <None Include="resources\bo góc màu đỏ1.png" />
+    <None Include="resources\gif cat1.gif" />
+    <None Include="resources\bo góc màu hồng1.png" />
+    <None Include="resources\4611434_1bm8dFO1.gif" />
+    <Content Include="resources\accept.png" />
+    <Content Include="resources\Account_50px.png" />
+    <Content Include="resources\Add List_48px.png" />
+    <Content Include="resources\Align Justify_48px.png" />
+    <Content Include="resources\bo góc màu hồng.png" />
+    <Content Include="resources\bo góc màu xanh.png" />
+    <None Include="resources\Hide Password2.png" />
+    <None Include="resources\Hide Password1.png" />
+    <None Include="resources\bo góc màu xanh1.png" />
+    <Content Include="resources\bo góc màu đỏ.png" />
+    <Content Include="resources\calendar.png" />
+    <Content Include="resources\cat happy.gif" />
+    <Content Include="resources\check %281%29.png" />
+    <Content Include="resources\check.png" />
+    <Content Include="resources\checked.png" />
+    <Content Include="resources\close.png" />
+    <Content Include="resources\confirm.png" />
+    <Content Include="resources\delete %281%29.png" />
+    <Content Include="resources\delete %281%291.png" />
+    <Content Include="resources\delete.png" />
+    <Content Include="resources\edit.png" />
+    <Content Include="resources\exit.png" />
+    <Content Include="resources\floppy-disc.png" />
+    <Content Include="resources\folder.png" />
+    <Content Include="resources\genders.png" />
+    <Content Include="resources\gif cat.gif" />
+    <Content Include="resources\gif cho doi.gif" />
+    <Content Include="resources\gif dang nhap vui nhon.gif" />
+    <Content Include="resources\gif dang nhap.jpg" />
+    <None Include="resources\gif dang nhap2.jpg" />
+    <None Include="resources\gif dang nhap1.jpg" />
+    <Content Include="resources\gif load.gif" />
+    <Content Include="resources\gif wait.gif" />
+    <Content Include="resources\Hide Password.png" />
+    <Content Include="resources\home %281%29.png" />
+    <Content Include="resources\home.png" />
+    <Content Include="resources\home1.png" />
+    <Content Include="resources\Home_50px.png" />
+    <Content Include="resources\money-bag.png" />
+    <Content Include="resources\money.png" />
+    <Content Include="resources\pie-chart.png" />
+    <Content Include="resources\pie-chart1.png" />
+    <Content Include="resources\Roll Back.png" />
+    <Content Include="resources\rotate.png" />
+    <Content Include="resources\save.png" />
+    <Content Include="resources\search.png" />
+    <Content Include="resources\Search_40px.png" />
+    <Content Include="resources\seo.png" />
+    <Content Include="resources\Show Password.png" />
+    <Content Include="resources\tc.png" />
+    <Content Include="resources\teamwork %281%29.png" />
+    <Content Include="resources\thống kê.png" />
+    <Content Include="resources\xlsx-file-format.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
