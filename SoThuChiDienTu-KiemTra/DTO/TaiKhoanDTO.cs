@@ -22,9 +22,6 @@ namespace SoThuChiDienTu_KiemTra.DTO
 
         public DateTime ngaysinh;
 
-        public string huyen;
-
-        public string tinh;
         public string Taikhoan { get => taikhoan; set => taikhoan = value; }
         public string Matkhau { get => matkhau; set => matkhau = value; }
         public string Gioitinh { get => gioitinh; set => gioitinh = value; }
@@ -33,13 +30,10 @@ namespace SoThuChiDienTu_KiemTra.DTO
         public string Loaitaikhoan { get => loaitaikhoan; set => loaitaikhoan = value; }
         public DateTime Ngaysinh { get => ngaysinh; set => ngaysinh = value; }
 
-        public string Huyen { get => huyen; set => huyen = value; }
-        public string Tinh { get => tinh; set => tinh = value; }
-
 
         public TaiKhoanDTO() { }
 
-        public TaiKhoanDTO( string taikhoan, string matkhau, string hoten, string gioitinh, string sdt, string diachi, string loaitaikhoan, DateTime ngaysinh, string huyen, string tinh)
+        public TaiKhoanDTO( string taikhoan, string matkhau, string hoten, string gioitinh, string sdt, string diachi, string loaitaikhoan, DateTime ngaysinh)
         {
             this.taikhoan = taikhoan;
             this.matkhau = matkhau;
@@ -48,8 +42,6 @@ namespace SoThuChiDienTu_KiemTra.DTO
             this.diachi = diachi;
             this.loaitaikhoan = loaitaikhoan;
             this.ngaysinh = ngaysinh;
-            this.huyen = huyen;
-            this.tinh = tinh;
         }
 
     }
