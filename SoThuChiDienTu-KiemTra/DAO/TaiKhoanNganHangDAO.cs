@@ -42,8 +42,8 @@ namespace SoThuChiDienTu_KiemTra.DAO
         }
         public bool CapNhatSoTaiKhoan(string taiKhoan, string tenNganHang, string soTaiKhoan)
         {
-            string query = "UPDATE TaiKhoanNganHang WHERE TenNganHang = @tenNganHang, SoTaiKhoan = @soTaiKhoan WHERE TaiKhoan = @taiKhoan";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { taiKhoan, tenNganHang, soTaiKhoan });
+            string query = "UPDATE TaiKhoanNganHang SET TenNganHang = @tenNganHang, SoTaiKhoan = @soTaiKhoan WHERE TaiKhoan = @taiKhoan";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { tenNganHang, soTaiKhoan, taiKhoan });
             return result > 0;
         }
     }
