@@ -53,9 +53,9 @@ namespace SoThuChiDienTu_KiemTra.DAO
             }
             return hasRows;
         }
-        public bool DangKy(string taiKhoan, string matKhau, string gioiTinh, string sdt, string diaChi, DateTime ngaySinh)
+        public bool DangKy(string taiKhoan, string matKhau, string gioiTinh, string sdt, string huyen,string tinh, DateTime ngaySinh)
         {
-            string query = "INSERT INTO Users (TaiKhoan, MatKhau, GioiTinh, SDT, DiaChi, NgaySinh) VALUES (@taiKhoan, @matKhau, @gioiTinh, @sdt, @diaChi, @ngaySinh)";
+            string query = "INSERT INTO Users (TaiKhoan, MatKhau, Huyen, Tinh, SDT, DiaChi, NgaySinh) VALUES (@taiKhoan, @matKhau, @gioiTinh, @sdt, @huyen, @tinh, @ngaySinh)";
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { taiKhoan, matKhau, gioiTinh, sdt, diaChi, ngaySinh });
             return result > 0;
         }
