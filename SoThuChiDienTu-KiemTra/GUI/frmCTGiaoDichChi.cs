@@ -22,5 +22,10 @@ namespace SoThuChiDienTu_KiemTra.GUI
         {
 
         }
+
+        private void frmCTGiaoDichChi_Load(object sender, EventArgs e)
+        {
+            // tim kakak
+        }
     }
 }

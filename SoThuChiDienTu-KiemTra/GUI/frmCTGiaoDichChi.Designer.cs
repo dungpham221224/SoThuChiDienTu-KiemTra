@@ -31,16 +31,16 @@ namespace SoThuChiDienTu_KiemTra.GUI
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvGiaoDichChi = new System.Windows.Forms.DataGridView();
-            this.lbTongTien = new System.Windows.Forms.Label();
-            this.txtTongTien = new System.Windows.Forms.TextBox();
-            this.btnLuu = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
             this.MaGiaoDich = new System.Windows.Forms.DataGridViewButtonColumn();
             this.PhuongThucThanhToan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MoTa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgayGiaoDich = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbTongTien = new System.Windows.Forms.Label();
+            this.txtTongTien = new System.Windows.Forms.TextBox();
+            this.btnLuu = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGiaoDichChi)).BeginInit();
@@ -82,6 +82,46 @@ namespace SoThuChiDienTu_KiemTra.GUI
             this.dgvGiaoDichChi.Size = new System.Drawing.Size(658, 421);
             this.dgvGiaoDichChi.TabIndex = 3;
             this.dgvGiaoDichChi.TabStop = false;
+            // 
+            // MaGiaoDich
+            // 
+            this.MaGiaoDich.DataPropertyName = "MaGiaoDich";
+            this.MaGiaoDich.HeaderText = "Mã giao dịch";
+            this.MaGiaoDich.MinimumWidth = 6;
+            this.MaGiaoDich.Name = "MaGiaoDich";
+            this.MaGiaoDich.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.MaGiaoDich.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.MaGiaoDich.Visible = false;
+            // 
+            // PhuongThucThanhToan
+            // 
+            this.PhuongThucThanhToan.DataPropertyName = "MaPhuongThucThanhToan";
+            this.PhuongThucThanhToan.HeaderText = "Phương thức thanh toán";
+            this.PhuongThucThanhToan.MinimumWidth = 6;
+            this.PhuongThucThanhToan.Name = "PhuongThucThanhToan";
+            this.PhuongThucThanhToan.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // SoTien
+            // 
+            this.SoTien.DataPropertyName = "SoTien";
+            this.SoTien.HeaderText = "Tiền";
+            this.SoTien.MinimumWidth = 6;
+            this.SoTien.Name = "SoTien";
+            this.SoTien.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // MoTa
+            // 
+            this.MoTa.DataPropertyName = "MoTa";
+            this.MoTa.HeaderText = "Mô tả";
+            this.MoTa.MinimumWidth = 6;
+            this.MoTa.Name = "MoTa";
+            // 
+            // NgayGiaoDich
+            // 
+            this.NgayGiaoDich.DataPropertyName = "NgayGiaoDich";
+            this.NgayGiaoDich.HeaderText = "Ngày giao dịch";
+            this.NgayGiaoDich.MinimumWidth = 6;
+            this.NgayGiaoDich.Name = "NgayGiaoDich";
             // 
             // lbTongTien
             // 
@@ -141,46 +181,6 @@ namespace SoThuChiDienTu_KiemTra.GUI
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // MaGiaoDich
-            // 
-            this.MaGiaoDich.DataPropertyName = "MaGiaoDich";
-            this.MaGiaoDich.HeaderText = "Mã giao dịch";
-            this.MaGiaoDich.MinimumWidth = 6;
-            this.MaGiaoDich.Name = "MaGiaoDich";
-            this.MaGiaoDich.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.MaGiaoDich.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.MaGiaoDich.Visible = false;
-            // 
-            // PhuongThucThanhToan
-            // 
-            this.PhuongThucThanhToan.DataPropertyName = "MaPhuongThucThanhToan";
-            this.PhuongThucThanhToan.HeaderText = "Phương thức thanh toán";
-            this.PhuongThucThanhToan.MinimumWidth = 6;
-            this.PhuongThucThanhToan.Name = "PhuongThucThanhToan";
-            this.PhuongThucThanhToan.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // SoTien
-            // 
-            this.SoTien.DataPropertyName = "SoTien";
-            this.SoTien.HeaderText = "Tiền";
-            this.SoTien.MinimumWidth = 6;
-            this.SoTien.Name = "SoTien";
-            this.SoTien.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // MoTa
-            // 
-            this.MoTa.DataPropertyName = "MoTa";
-            this.MoTa.HeaderText = "Mô tả";
-            this.MoTa.MinimumWidth = 6;
-            this.MoTa.Name = "MoTa";
-            // 
-            // NgayGiaoDich
-            // 
-            this.NgayGiaoDich.DataPropertyName = "NgayGiaoDich";
-            this.NgayGiaoDich.HeaderText = "Ngày giao dịch";
-            this.NgayGiaoDich.MinimumWidth = 6;
-            this.NgayGiaoDich.Name = "NgayGiaoDich";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -216,6 +216,7 @@ namespace SoThuChiDienTu_KiemTra.GUI
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCTGiaoDichChi";
             this.Text = "frmTrangChu";
+            this.Load += new System.EventHandler(this.frmCTGiaoDichChi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGiaoDichChi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
