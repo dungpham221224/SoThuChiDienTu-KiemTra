@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace SoThuChiDienTu_KiemTra.DAO
 {
@@ -21,97 +22,111 @@ namespace SoThuChiDienTu_KiemTra.DAO
 
         private DataProvider() { }
 
-        private string connectionSTR = @"Data Source=VINFAST\MSSQLSERVER2022;Initial Catalog=QuanLyChiTieuNop;Integrated Security=True;TrustServerCertificate=True";
+        private string connectionSTR = @"Data Source=TIENHUNGDZAIVCL;Initial Catalog=QuanLyChiTieuNop;Integrated Security=True;TrustServerCertificate=True";
 
         //thực thi câu lệnh SQL trả về DataTable 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();
-            using (SqlConnection connection = new SqlConnection(connectionSTR))
+            try
             {
-                connection.Open();
-                SqlCommand command = new SqlCommand(query, connection);
-
-                if (parameter != null)
+                using (SqlConnection connection = new SqlConnection(connectionSTR))
                 {
-                    string[] listPara = query.Split(' ');
-
-                    int i = 0;
-                    foreach (string item in listPara)
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        if (item.Contains("@"))
+                        if (parameter != null)
                         {
-                            command.Parameters.AddWithValue(item, parameter[i]);
-                            i++;
+                            // Bắt @parameter trong query bằng Regex
+                            var matches = Regex.Matches(query, @"@\w+");
+                            int i = 0;
+                            foreach (Match match in matches)
+                            {
+                                command.Parameters.AddWithValue(match.Value, parameter[i]);
+                                i++;
+                            }
                         }
+
+                        SqlDataAdapter adapter = new SqlDataAdapter(command);
+                        adapter.Fill(data);
                     }
                 }
-
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                adapter.Fill(data);
-
-                connection.Close();
             }
-            return data; //Trả về dạng DataTable
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi ExecuteQuery: " + ex.Message);
+                throw; // Hoặc return null tùy bạn
+            }
+            return data;
         }
         //thực thi câu lệnh SQL ko trả về dữ liệu, dùng cho INSERT, DELETE, UPDATE 
         public int ExecuteNonQuery(string query, object[] parameter = null)
         {
             int data = 0;
-            using (SqlConnection connection = new SqlConnection(connectionSTR))
+            try
             {
-                connection.Open();
-
-                SqlCommand command = new SqlCommand(query, connection);
-
-                if (parameter != null)
+                using (SqlConnection connection = new SqlConnection(connectionSTR))
                 {
-                    string[] listPara = query.Split(' ');
+                    connection.Open();
 
-                    int i = 0;
-                    foreach (string item in listPara)
+                    using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        if (item.Contains("@"))
+                        if (parameter != null)
                         {
-                            command.Parameters.AddWithValue(item, parameter[i]);
-                            i++;
+                            // Tạo regex bắt các biến @param trong query
+                            var matches = Regex.Matches(query, @"@\w+");
+                            int i = 0;
+                            foreach (Match match in matches)
+                            {
+                                // match.Value chính là @paramName
+                                command.Parameters.AddWithValue(match.Value, parameter[i]);
+                                i++;
+                            }
                         }
+
+                        data = command.ExecuteNonQuery();
                     }
                 }
-
-                data = command.ExecuteNonQuery();
-
-                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi ExecuteNonQuery: " + ex.Message);
+                // Tùy bạn, có thể throw lại hoặc return -1 báo lỗi
+                throw;
             }
             return data;
         }
+
         // Thực thi một câu lệnh SQL và trả về giá trị đầu tiên của kết quả
         public object ExecuteScalar(string query, object[] parameter = null)
         {
-            object data = 0;
-            using (SqlConnection connection = new SqlConnection(connectionSTR))
+            object data = null;
+            try
             {
-                connection.Open();
-                SqlCommand command = new SqlCommand(query, connection);
-
-                if (parameter != null)
+                using (SqlConnection connection = new SqlConnection(connectionSTR))
                 {
-                    string[] listPara = query.Split(' ');
-
-                    int i = 0;
-                    foreach (string item in listPara)
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        if (item.Contains("@"))
+                        if (parameter != null)
                         {
-                            command.Parameters.AddWithValue(item, parameter[i]);
-                            i++;
+                            var matches = Regex.Matches(query, @"@\w+");
+                            int i = 0;
+                            foreach (Match match in matches)
+                            {
+                                command.Parameters.AddWithValue(match.Value, parameter[i]);
+                                i++;
+                            }
                         }
+
+                        data = command.ExecuteScalar();
                     }
                 }
-
-                data = command.ExecuteScalar();
-
-                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi ExecuteScalar: " + ex.Message);
+                throw; // Hoặc return null nếu bạn thích
             }
             return data;
         }
@@ -120,22 +135,29 @@ namespace SoThuChiDienTu_KiemTra.DAO
             SqlConnection connection = new SqlConnection(connectionSTR);
             SqlCommand command = new SqlCommand(query, connection);
 
-            if (parameters != null)
+            try
             {
-                string[] listParams = query.Split(' ');
-                int index = 0;
-                foreach (string item in listParams)
+                if (parameters != null)
                 {
-                    if (item.Contains("@"))
+                    var matches = Regex.Matches(query, @"@\w+");
+                    int index = 0;
+                    foreach (Match match in matches)
                     {
-                        command.Parameters.AddWithValue(item, parameters[index]);
+                        command.Parameters.AddWithValue(match.Value, parameters[index]);
                         index++;
                     }
                 }
+
+                connection.Open();
+                // CommandBehavior.CloseConnection: tự đóng connection khi reader.Close()
+                return command.ExecuteReader(CommandBehavior.CloseConnection);
             }
-            connection.Open();
-            SqlDataReader reader = command.ExecuteReader(CommandBehavior.CloseConnection);
-            return reader;
+            catch (Exception ex)
+            {
+                Console.WriteLine("Lỗi ExecuteReader: " + ex.Message);
+                connection.Dispose(); // Giải phóng connection nếu lỗi
+                throw; // Bắn lỗi lên cho dễ debug
+            }
         }
     }
 }

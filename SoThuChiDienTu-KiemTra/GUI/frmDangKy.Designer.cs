@@ -115,7 +115,7 @@ namespace SoThuChiDienTu_KiemTra.GUI
             this.txtTaiKhoan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTaiKhoan.ForeColor = System.Drawing.Color.Silver;
-            this.txtTaiKhoan.Location = new System.Drawing.Point(412, 401);
+            this.txtTaiKhoan.Location = new System.Drawing.Point(410, 401);
             this.txtTaiKhoan.Multiline = true;
             this.txtTaiKhoan.Name = "txtTaiKhoan";
             this.txtTaiKhoan.Size = new System.Drawing.Size(200, 24);
@@ -174,7 +174,7 @@ namespace SoThuChiDienTu_KiemTra.GUI
             this.txtHoTen.Location = new System.Drawing.Point(489, 101);
             this.txtHoTen.Multiline = true;
             this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(123, 20);
+            this.txtHoTen.Size = new System.Drawing.Size(160, 20);
             this.txtHoTen.TabIndex = 1;
             this.txtHoTen.Text = "Nhập họ tên";
             // 
@@ -186,9 +186,9 @@ namespace SoThuChiDienTu_KiemTra.GUI
             this.btnHoTen.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnHoTen.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnHoTen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHoTen.Location = new System.Drawing.Point(484, 93);
+            this.btnHoTen.Location = new System.Drawing.Point(485, 93);
             this.btnHoTen.Name = "btnHoTen";
-            this.btnHoTen.Size = new System.Drawing.Size(152, 37);
+            this.btnHoTen.Size = new System.Drawing.Size(167, 37);
             this.btnHoTen.TabIndex = 47;
             this.btnHoTen.TabStop = false;
             this.btnHoTen.UseVisualStyleBackColor = true;
@@ -230,9 +230,9 @@ namespace SoThuChiDienTu_KiemTra.GUI
             this.dtpNgaySinh.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dtpNgaySinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgaySinh.Location = new System.Drawing.Point(469, 209);
+            this.dtpNgaySinh.Location = new System.Drawing.Point(485, 198);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(163, 24);
+            this.dtpNgaySinh.Size = new System.Drawing.Size(155, 24);
             this.dtpNgaySinh.TabIndex = 5;
             // 
             // mtxtSDT
@@ -241,12 +241,13 @@ namespace SoThuChiDienTu_KiemTra.GUI
             this.mtxtSDT.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(200)))));
             this.mtxtSDT.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mtxtSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtxtSDT.Location = new System.Drawing.Point(507, 259);
+            this.mtxtSDT.Location = new System.Drawing.Point(530, 237);
             this.mtxtSDT.Margin = new System.Windows.Forms.Padding(0);
             this.mtxtSDT.Mask = "0000-000-000";
             this.mtxtSDT.Name = "mtxtSDT";
-            this.mtxtSDT.Size = new System.Drawing.Size(117, 19);
+            this.mtxtSDT.Size = new System.Drawing.Size(134, 19);
             this.mtxtSDT.TabIndex = 6;
+            this.mtxtSDT.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mtxtSDT_MaskInputRejected);
             // 
             // cboTinh
             // 
@@ -259,11 +260,12 @@ namespace SoThuChiDienTu_KiemTra.GUI
             this.cboTinh.ForeColor = System.Drawing.Color.DeepPink;
             this.cboTinh.FormattingEnabled = true;
             this.cboTinh.IntegralHeight = false;
-            this.cboTinh.Location = new System.Drawing.Point(392, 323);
+            this.cboTinh.Location = new System.Drawing.Point(452, 267);
             this.cboTinh.MaxDropDownItems = 10;
             this.cboTinh.Name = "cboTinh";
-            this.cboTinh.Size = new System.Drawing.Size(115, 26);
+            this.cboTinh.Size = new System.Drawing.Size(197, 26);
             this.cboTinh.TabIndex = 7;
+            this.cboTinh.SelectedIndexChanged += new System.EventHandler(this.cboTinh_SelectedIndexChanged);
             // 
             // btnSDT
             // 
@@ -324,10 +326,10 @@ namespace SoThuChiDienTu_KiemTra.GUI
             this.cboHuyen.ForeColor = System.Drawing.Color.DeepPink;
             this.cboHuyen.FormattingEnabled = true;
             this.cboHuyen.IntegralHeight = false;
-            this.cboHuyen.Location = new System.Drawing.Point(517, 323);
+            this.cboHuyen.Location = new System.Drawing.Point(452, 310);
             this.cboHuyen.MaxDropDownItems = 10;
             this.cboHuyen.Name = "cboHuyen";
-            this.cboHuyen.Size = new System.Drawing.Size(115, 26);
+            this.cboHuyen.Size = new System.Drawing.Size(200, 26);
             this.cboHuyen.TabIndex = 8;
             // 
             // lbSDT
@@ -338,7 +340,7 @@ namespace SoThuChiDienTu_KiemTra.GUI
             this.lbSDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSDT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lbSDT.Image = global::SoThuChiDienTu_KiemTra.Properties.Resources.bo_góc_màu_hồng;
-            this.lbSDT.Location = new System.Drawing.Point(388, 257);
+            this.lbSDT.Location = new System.Drawing.Point(378, 236);
             this.lbSDT.Name = "lbSDT";
             this.lbSDT.Size = new System.Drawing.Size(119, 20);
             this.lbSDT.TabIndex = 1025;
@@ -352,7 +354,7 @@ namespace SoThuChiDienTu_KiemTra.GUI
             this.lbHuyen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHuyen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lbHuyen.Image = global::SoThuChiDienTu_KiemTra.Properties.Resources.bo_góc_màu_hồng;
-            this.lbHuyen.Location = new System.Drawing.Point(513, 298);
+            this.lbHuyen.Location = new System.Drawing.Point(378, 310);
             this.lbHuyen.Name = "lbHuyen";
             this.lbHuyen.Size = new System.Drawing.Size(68, 20);
             this.lbHuyen.TabIndex = 1025;
@@ -366,11 +368,12 @@ namespace SoThuChiDienTu_KiemTra.GUI
             this.lbTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTinh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lbTinh.Image = global::SoThuChiDienTu_KiemTra.Properties.Resources.bo_góc_màu_hồng;
-            this.lbTinh.Location = new System.Drawing.Point(388, 298);
+            this.lbTinh.Location = new System.Drawing.Point(378, 269);
             this.lbTinh.Name = "lbTinh";
             this.lbTinh.Size = new System.Drawing.Size(51, 20);
             this.lbTinh.TabIndex = 1025;
             this.lbTinh.Text = "Tỉnh:";
+            this.lbTinh.Click += new System.EventHandler(this.lbTinh_Click);
             // 
             // lbGioiTinh
             // 
@@ -380,7 +383,7 @@ namespace SoThuChiDienTu_KiemTra.GUI
             this.lbGioiTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbGioiTinh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lbGioiTinh.Image = global::SoThuChiDienTu_KiemTra.Properties.Resources.bo_góc_màu_hồng;
-            this.lbGioiTinh.Location = new System.Drawing.Point(388, 157);
+            this.lbGioiTinh.Location = new System.Drawing.Point(378, 157);
             this.lbGioiTinh.Name = "lbGioiTinh";
             this.lbGioiTinh.Size = new System.Drawing.Size(80, 20);
             this.lbGioiTinh.TabIndex = 52;
@@ -394,11 +397,12 @@ namespace SoThuChiDienTu_KiemTra.GUI
             this.lbNgaySinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNgaySinh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lbNgaySinh.Image = global::SoThuChiDienTu_KiemTra.Properties.Resources.bo_góc_màu_hồng;
-            this.lbNgaySinh.Location = new System.Drawing.Point(388, 209);
+            this.lbNgaySinh.Location = new System.Drawing.Point(378, 198);
             this.lbNgaySinh.Name = "lbNgaySinh";
             this.lbNgaySinh.Size = new System.Drawing.Size(92, 20);
             this.lbNgaySinh.TabIndex = 49;
             this.lbNgaySinh.Text = "Ngày sinh";
+            this.lbNgaySinh.Click += new System.EventHandler(this.lbNgaySinh_Click);
             // 
             // lbHoTen
             // 
@@ -408,7 +412,7 @@ namespace SoThuChiDienTu_KiemTra.GUI
             this.lbHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHoTen.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lbHoTen.Image = global::SoThuChiDienTu_KiemTra.Properties.Resources.bo_góc_màu_hồng;
-            this.lbHoTen.Location = new System.Drawing.Point(388, 100);
+            this.lbHoTen.Location = new System.Drawing.Point(378, 100);
             this.lbHoTen.Name = "lbHoTen";
             this.lbHoTen.Size = new System.Drawing.Size(90, 20);
             this.lbHoTen.TabIndex = 46;
@@ -468,7 +472,7 @@ namespace SoThuChiDienTu_KiemTra.GUI
             this.lbTaiKhoan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTaiKhoan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lbTaiKhoan.Image = global::SoThuChiDienTu_KiemTra.Properties.Resources.bo_góc_màu_hồng;
-            this.lbTaiKhoan.Location = new System.Drawing.Point(388, 360);
+            this.lbTaiKhoan.Location = new System.Drawing.Point(378, 353);
             this.lbTaiKhoan.Name = "lbTaiKhoan";
             this.lbTaiKhoan.Size = new System.Drawing.Size(90, 20);
             this.lbTaiKhoan.TabIndex = 38;
@@ -523,7 +527,7 @@ namespace SoThuChiDienTu_KiemTra.GUI
             this.picNen.Location = new System.Drawing.Point(252, 9);
             this.picNen.Margin = new System.Windows.Forms.Padding(0);
             this.picNen.Name = "picNen";
-            this.picNen.Size = new System.Drawing.Size(390, 575);
+            this.picNen.Size = new System.Drawing.Size(412, 575);
             this.picNen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picNen.TabIndex = 34;
             this.picNen.TabStop = false;
@@ -566,6 +570,8 @@ namespace SoThuChiDienTu_KiemTra.GUI
             this.Name = "frmDangKy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý chi tiêu";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmDangKy_FormClosed);
+            this.Load += new System.EventHandler(this.frmDangKy_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.errorTaiKhoan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorMatKhau)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorHoTen)).EndInit();
