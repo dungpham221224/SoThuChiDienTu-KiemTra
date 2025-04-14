@@ -27,6 +27,8 @@ namespace SoThuChiDienTu_KiemTra.DAO
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();
+            try
+            {
             using (SqlConnection connection = new SqlConnection(connectionSTR))
             {
                 connection.Open();
