@@ -39,11 +39,30 @@ namespace SoThuChiDienTu_KiemTra.DAO
             return result > 0;
         }
         // xóa chi theo số tài khoản và taikhoan
-        public bool XoaChi(string soTaiKhoan, string taiKhoan)
+        public bool XoaChi(string loaiChi)
         {
-            string query = "DELETE FROM Chi WHERE SoTaiKhoan = @soTaiKhoan AND TaiKhoan = @taiKhoan";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { soTaiKhoan, taiKhoan });
+            string query = "DELETE FROM Chi WHERE LoaiChi = @loaiChi";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { loaiChi});
             return result > 0;
+        }
+        //xuất danh sách chi theo tháng 
+        public DataTable XuatDanhSachChiTheoThang(string SoTaiKhoan, int Thang, int Nam)
+        {
+            string query = "EXEC XuatDanhSachChiTheoThang @SoTaiKhoan, @Thang, @Nam";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { SoTaiKhoan, Thang, Nam });
+            return data;
+        }
+        public DataTable XuatDanhSachChi7NgayGanNhat(string SoTaiKhoan)
+        {
+            string query = "EXEC XuatDanhSachChi7NgayGanNhat @SoTaiKhoan";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { SoTaiKhoan });
+            return data;
+        }
+        public DataTable XuatDanhSachChi30NgayGanNhat(string SoTaiKhoan)
+        {
+            string query = "EXEC XuatDanhSachChi30NgayGanNhat @SoTaiKhoan";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, new object[] { SoTaiKhoan });
+            return data;
         }
     }
 }

@@ -50,6 +50,7 @@
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\TaiKhoanDAO.cs" />
     <Compile Include="DAO\TaiKhoanNganHangDAO.cs" />
+    <Compile Include="DAO\ThuDAO.cs" />
     <Compile Include="DTO\ChiDTO.cs" />
     <Compile Include="DTO\TaiKhoanDTO.cs" />
     <Compile Include="DTO\TaiKhoanNganHangDTO.cs" />
