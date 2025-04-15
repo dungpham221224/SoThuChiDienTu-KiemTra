@@ -63,7 +63,7 @@ namespace SoThuChiDienTu_KiemTra.DAO
             }
             return hasRows;
         }
-        public bool DangKy(string taiKhoan, string matKhau, string gioiTinh, string sdt, string diaChi, DateTime ngaySinh, string hoTen)
+        public bool DangKy(string taiKhoan, string matKhau, string gioiTinh, string sdt, string diaChi, DateTime ngaySinh)
         {
             string query = "INSERT INTO Users (TaiKhoan, MatKhau, GioiTinh, SDT, DiaChi, NgaySinh, HoTen) VALUES (@taiKhoan, @matKhau, @gioiTinh, @sdt, @diaChi, @ngaySinh, @hoTen)";
             int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { taiKhoan, matKhau, gioiTinh, sdt, diaChi, ngaySinh, hoTen });
