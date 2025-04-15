@@ -163,6 +163,16 @@ namespace SoThuChiDienTu_KiemTra.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hide {
+            get {
+                object obj = ResourceManager.GetObject("hide", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Hide_Password {
             get {
                 object obj = ResourceManager.GetObject("Hide Password", resourceCulture);
@@ -226,6 +236,36 @@ namespace SoThuChiDienTu_KiemTra.Properties {
         internal static System.Drawing.Bitmap seo {
             get {
                 object obj = ResourceManager.GetObject("seo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap visible {
+            get {
+                object obj = ResourceManager.GetObject("visible", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap visible__1_ {
+            get {
+                object obj = ResourceManager.GetObject("visible (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap visible__2_ {
+            get {
+                object obj = ResourceManager.GetObject("visible (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

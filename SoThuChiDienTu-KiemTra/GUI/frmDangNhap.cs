@@ -23,10 +23,7 @@ namespace SoThuChiDienTu_KiemTra
         }
         public static bool SizeForm = false;
 
-        private void btnDangNhap_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void frmDangNhap_SizeChanged(object sender, EventArgs e)
         {
@@ -35,42 +32,7 @@ namespace SoThuChiDienTu_KiemTra
                 SizeForm = true;
             }
         }
-        private void txtTaiKhoan_Enter(object sender, EventArgs e)
-        {
-            if (txtTaiKhoan.Text == "Nhập tên đăng nhập")
-            {
-                txtTaiKhoan.Text = "";
-                txtTaiKhoan.ForeColor = Color.Black;
-            }
-        }
-        private void txtTaiKhoan_Leave(object sender, EventArgs e)
-        {
-            if (txtTaiKhoan.Text == "")
-            {
-                txtTaiKhoan.Text = "Nhập tên đăng nhập";
-                txtTaiKhoan.ForeColor = Color.Silver;
-            }
-        }
-        private void txtTaiKhoan_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (txtTaiKhoan.Text.Length <= 20 || e.KeyChar == (char)Keys.Delete || e.KeyChar == (char)Keys.Back)
-            {
-                e.Handled = false;
-                errorTaiKhoan.Clear();
-                btnTaiKhoan.FlatAppearance.BorderSize = 0;
-            }
-            else
-            {
-                e.Handled = true;
-                errorTaiKhoan.SetError(btnTaiKhoan, "Quá ký tự cho phép");
-                btnTaiKhoan.FlatAppearance.BorderSize = 2;
-            }
-
-            if (char.IsLetter(e.KeyChar) && e.KeyChar > 127)
-            {
-                e.Handled = true; 
-            }
-        }
+        
         //Kiểm tra tài khoản
         #region
         public int KiemTraTaiKhoan(string taiKhoan)
@@ -99,34 +61,6 @@ namespace SoThuChiDienTu_KiemTra
             return checkTaiKhoan;
         }
         #endregion
-        private void txtMatKhau_Enter(object sender, EventArgs e)
-        {
-            if (txtMatKhau.Text == "Nhập mật khẩu")
-            {
-                txtMatKhau.Text = "";
-                txtMatKhau.ForeColor = Color.Black;
-            }
-        }
-        private void txtMatKhau_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (txtMatKhau.Text.Length <= 20 || e.KeyChar == (char)Keys.Delete || e.KeyChar == (char)Keys.Back)
-            {
-                e.Handled = false;
-                errorMatKhau.Clear();
-                btnMatKhau.FlatAppearance.BorderSize = 0;
-            }
-            else
-            {
-                e.Handled = true;
-                errorMatKhau.SetError(btnMatKhau, "Quá ký tự cho phép");
-                btnMatKhau.FlatAppearance.BorderSize = 2;
-            }
-
-            if (char.IsLetter(e.KeyChar) && e.KeyChar > 127)
-            {
-                e.Handled = true; // Không cho phép ký tự có dấu được nhập
-            }
-        }
         //Kiểm tra mật khẩu
         #region
         public int KiemTraMatKhau(string matKhau)
@@ -156,26 +90,15 @@ namespace SoThuChiDienTu_KiemTra
         }
         #endregion
 
-        private void btnHienThi_Click(object sender, EventArgs e)
-        {
-            btnAn.Visible = true;
-            btnHienThi.Visible = false;
-            txtMatKhau.UseSystemPasswordChar = true;
-        }
-        private void btnAn_Click(object sender, EventArgs e)
-        {
-            btnAn.Visible = false;
-            btnHienThi.Visible = true;
-            txtMatKhau.UseSystemPasswordChar = false;
-        }
-
         private void btnDangNhap_Click_1(object sender, EventArgs e)
         {
             errorTaiKhoan.Clear();
-            errorMatKhau.Clear();
+            errorMatKhau.Clear(); 
             if (KiemTraMatKhau(txtMatKhau.Text) == 1 && KiemTraTaiKhoan(txtTaiKhoan.Text) == 1)
             {
-                if(TaiKhoanDAO.Instance.DangNhap(txtTaiKhoan.Text, txtMatKhau.Text))
+                
+
+                if (TaiKhoanDAO.Instance.DangNhap(txtTaiKhoan.Text, txtMatKhau.Text, out string name1))
                 {
                     TaiKhoan = txtTaiKhoan.Text;
                     this.Hide();
@@ -203,6 +126,88 @@ namespace SoThuChiDienTu_KiemTra
             this.Hide();
             frmDangKy frmDangKy = new frmDangKy();
             frmDangKy.Show();
-        }    
+        }
+        private void txtTaiKhoan_Enter_1(object sender, EventArgs e)
+        {
+            if (txtTaiKhoan.Text == "Nhập tên đăng nhập")
+            {
+                txtTaiKhoan.Text = "";
+                txtTaiKhoan.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtTaiKhoan_Leave_1(object sender, EventArgs e)
+        {
+            if (txtTaiKhoan.Text == "")
+            {
+                txtTaiKhoan.Text = "Nhập tên đăng nhập";
+                txtTaiKhoan.ForeColor = Color.Silver;
+            }
+        }
+
+        private void txtTaiKhoan_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (txtTaiKhoan.Text.Length <= 20 || e.KeyChar == (char)Keys.Delete || e.KeyChar == (char)Keys.Back)
+            {
+                e.Handled = false;
+                errorTaiKhoan.Clear();
+                btnTaiKhoan.FlatAppearance.BorderSize = 0;
+            }
+            else
+            {
+                e.Handled = true;
+                errorTaiKhoan.SetError(btnTaiKhoan, "Quá ký tự cho phép");
+                btnTaiKhoan.FlatAppearance.BorderSize = 2;
+            }
+
+            if (char.IsLetter(e.KeyChar) && e.KeyChar > 127)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtMatKhau_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            if (txtMatKhau.Text.Length <= 20 || e.KeyChar == (char)Keys.Delete || e.KeyChar == (char)Keys.Back)
+            {
+                e.Handled = false;
+                errorMatKhau.Clear();
+                btnMatKhau.FlatAppearance.BorderSize = 0;
+            }
+            else
+            {
+                e.Handled = true;
+                errorMatKhau.SetError(btnMatKhau, "Quá ký tự cho phép");
+                btnMatKhau.FlatAppearance.BorderSize = 2;
+            }
+
+            if (char.IsLetter(e.KeyChar) && e.KeyChar > 127)
+            {
+                e.Handled = true; // Không cho phép ký tự có dấu được nhập
+            }
+        }
+
+        private void txtMatKhau_Enter_1(object sender, EventArgs e)
+        {
+            if (txtMatKhau.Text == "Nhập mật khẩu")
+            {
+                txtMatKhau.Text = "";
+                txtMatKhau.ForeColor = Color.Black;
+            }
+        }
+
+        private void btnHienThi_Click_1(object sender, EventArgs e)
+        {
+            btnAn.Visible = true;
+            btnHienThi.Visible = false;
+            txtMatKhau.UseSystemPasswordChar = true;
+        }
+
+        private void btnAn_Click_1(object sender, EventArgs e)
+        {
+            btnAn.Visible = false;
+            btnHienThi.Visible = true;
+            txtMatKhau.UseSystemPasswordChar = false;
+        }
     }
 }

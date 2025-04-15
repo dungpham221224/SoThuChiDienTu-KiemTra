@@ -17,11 +17,21 @@ namespace SoThuChiDienTu_KiemTra.DAO
             get { if (instance == null) instance = new TaiKhoanDAO(); return TaiKhoanDAO.instance; }
             private set { TaiKhoanDAO.instance = value; }
         }
-        public bool DangNhap(string taiKhoan, string matKhau)
+        public bool DangNhap(string username, string password, out string userNameOut)
         {
-            string query = "SELECT * FROM Users WHERE TaiKhoan = @taiKhoan AND matkhau = @matkhau";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { taiKhoan, matKhau });
-            return result > 0;
+            string query = "SELECT TaiKhoan FROM Users WHERE TaiKhoan=@username AND MatKhau=@password";
+
+            using (SqlDataReader reader = DataProvider.Instance.ExecuteReader(query, new object[] { username, password }))
+            {
+                if (reader.Read()) 
+                {
+                    userNameOut = reader.GetString(0); 
+                    return true;
+                }
+            }
+
+            userNameOut = null;
+            return false;
         }
 
         public bool ThayDoiMatKhau(string taiKhoan, string matKhauMoi)
@@ -53,10 +63,10 @@ namespace SoThuChiDienTu_KiemTra.DAO
             }
             return hasRows;
         }
-        public bool DangKy(string taiKhoan, string matKhau, string gioiTinh, string sdt, string diaChi, DateTime ngaySinh)
+        public bool DangKy(string taiKhoan, string matKhau, string gioiTinh, string sdt, string diaChi, DateTime ngaySinh, string hoTen)
         {
-            string query = "INSERT INTO Users (TaiKhoan, MatKhau, GioiTinh, SDT, DiaChi, NgaySinh) VALUES (@taiKhoan, @matKhau, @gioiTinh, @sdt, @diaChi, @ngaySinh)";
-            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { taiKhoan, matKhau, gioiTinh, sdt, diaChi, ngaySinh });
+            string query = "INSERT INTO Users (TaiKhoan, MatKhau, GioiTinh, SDT, DiaChi, NgaySinh, HoTen) VALUES (@taiKhoan, @matKhau, @gioiTinh, @sdt, @diaChi, @ngaySinh, @hoTen)";
+            int result = DataProvider.Instance.ExecuteNonQuery(query, new object[] { taiKhoan, matKhau, gioiTinh, sdt, diaChi, ngaySinh, hoTen });
             return result > 0;
         }
     }

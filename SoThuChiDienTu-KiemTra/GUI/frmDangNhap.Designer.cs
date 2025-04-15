@@ -41,11 +41,11 @@ namespace SoThuChiDienTu_KiemTra
             this.btnMatKhau = new System.Windows.Forms.Button();
             this.errorTaiKhoan = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorMatKhau = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnAn = new System.Windows.Forms.Button();
-            this.lbDangNhap = new System.Windows.Forms.Label();
             this.btnHienThi = new System.Windows.Forms.Button();
+            this.btnAn = new System.Windows.Forms.Button();
             this.lbMatKhau = new System.Windows.Forms.Label();
             this.lbTaiKhoan = new System.Windows.Forms.Label();
+            this.lbDangNhap = new System.Windows.Forms.Label();
             this.picGif = new System.Windows.Forms.PictureBox();
             this.picNen = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorTaiKhoan)).BeginInit();
@@ -67,6 +67,8 @@ namespace SoThuChiDienTu_KiemTra
             this.txtMatKhau.Size = new System.Drawing.Size(200, 24);
             this.txtMatKhau.TabIndex = 2;
             this.txtMatKhau.Text = "Nhập mật khẩu";
+            this.txtMatKhau.Enter += new System.EventHandler(this.txtMatKhau_Enter_1);
+            this.txtMatKhau.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMatKhau_KeyPress_1);
             // 
             // llbDangKy
             // 
@@ -111,6 +113,7 @@ namespace SoThuChiDienTu_KiemTra
             this.llbQuenMatKhau.TabStop = true;
             this.llbQuenMatKhau.Text = "Quên mật khẩu?";
             this.llbQuenMatKhau.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+      
             // 
             // btnDangNhap
             // 
@@ -125,9 +128,9 @@ namespace SoThuChiDienTu_KiemTra
             this.btnDangNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangNhap.ForeColor = System.Drawing.Color.White;
-            this.btnDangNhap.Location = new System.Drawing.Point(391, 447);
+            this.btnDangNhap.Location = new System.Drawing.Point(354, 447);
             this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(126, 50);
+            this.btnDangNhap.Size = new System.Drawing.Size(186, 50);
             this.btnDangNhap.TabIndex = 0;
             this.btnDangNhap.Text = "Đăng Nhập";
             this.btnDangNhap.UseVisualStyleBackColor = false;
@@ -145,6 +148,9 @@ namespace SoThuChiDienTu_KiemTra
             this.txtTaiKhoan.Size = new System.Drawing.Size(200, 24);
             this.txtTaiKhoan.TabIndex = 1;
             this.txtTaiKhoan.Text = "Nhập tên đăng nhập";
+            this.txtTaiKhoan.Enter += new System.EventHandler(this.txtTaiKhoan_Enter_1);
+            this.txtTaiKhoan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTaiKhoan_KeyPress_1);
+            this.txtTaiKhoan.Leave += new System.EventHandler(this.txtTaiKhoan_Leave_1);
             // 
             // btnTaiKhoan
             // 
@@ -184,6 +190,24 @@ namespace SoThuChiDienTu_KiemTra
             // 
             this.errorMatKhau.ContainerControl = this;
             // 
+            // btnHienThi
+            // 
+            this.btnHienThi.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnHienThi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnHienThi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnHienThi.FlatAppearance.BorderSize = 0;
+            this.btnHienThi.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnHienThi.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.btnHienThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHienThi.Image = global::SoThuChiDienTu_KiemTra.Properties.Resources.hide;
+            this.btnHienThi.Location = new System.Drawing.Point(495, 305);
+            this.btnHienThi.Name = "btnHienThi";
+            this.btnHienThi.Size = new System.Drawing.Size(27, 23);
+            this.btnHienThi.TabIndex = 27;
+            this.btnHienThi.TabStop = false;
+            this.btnHienThi.UseVisualStyleBackColor = true;
+            this.btnHienThi.Click += new System.EventHandler(this.btnHienThi_Click_1);
+            // 
             // btnAn
             // 
             this.btnAn.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -194,43 +218,14 @@ namespace SoThuChiDienTu_KiemTra
             this.btnAn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnAn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.btnAn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAn.Image = global::SoThuChiDienTu_KiemTra.Properties.Resources.visible__2_;
             this.btnAn.Location = new System.Drawing.Point(495, 305);
             this.btnAn.Name = "btnAn";
             this.btnAn.Size = new System.Drawing.Size(27, 23);
             this.btnAn.TabIndex = 26;
             this.btnAn.TabStop = false;
             this.btnAn.UseVisualStyleBackColor = true;
-            // 
-            // lbDangNhap
-            // 
-            this.lbDangNhap.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbDangNhap.AutoSize = true;
-            this.lbDangNhap.BackColor = System.Drawing.Color.Transparent;
-            this.lbDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDangNhap.ForeColor = System.Drawing.Color.LightYellow;
-            this.lbDangNhap.Image = global::SoThuChiDienTu_KiemTra.Properties.Resources.bo_góc_màu_xanh;
-            this.lbDangNhap.Location = new System.Drawing.Point(347, 31);
-            this.lbDangNhap.Name = "lbDangNhap";
-            this.lbDangNhap.Size = new System.Drawing.Size(217, 42);
-            this.lbDangNhap.TabIndex = 18;
-            this.lbDangNhap.Text = "Đăng Nhập";
-            // 
-            // btnHienThi
-            // 
-            this.btnHienThi.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnHienThi.BackgroundImage = global::SoThuChiDienTu_KiemTra.Properties.Resources.Hide_Password1;
-            this.btnHienThi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnHienThi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHienThi.FlatAppearance.BorderSize = 0;
-            this.btnHienThi.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btnHienThi.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.btnHienThi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHienThi.Location = new System.Drawing.Point(495, 305);
-            this.btnHienThi.Name = "btnHienThi";
-            this.btnHienThi.Size = new System.Drawing.Size(27, 23);
-            this.btnHienThi.TabIndex = 27;
-            this.btnHienThi.TabStop = false;
-            this.btnHienThi.UseVisualStyleBackColor = true;
+            this.btnAn.Click += new System.EventHandler(this.btnAn_Click_1);
             // 
             // lbMatKhau
             // 
@@ -259,6 +254,20 @@ namespace SoThuChiDienTu_KiemTra
             this.lbTaiKhoan.Size = new System.Drawing.Size(90, 20);
             this.lbTaiKhoan.TabIndex = 17;
             this.lbTaiKhoan.Text = "Tài khoản";
+            // 
+            // lbDangNhap
+            // 
+            this.lbDangNhap.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbDangNhap.AutoSize = true;
+            this.lbDangNhap.BackColor = System.Drawing.Color.Transparent;
+            this.lbDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDangNhap.ForeColor = System.Drawing.Color.LightYellow;
+            this.lbDangNhap.Image = global::SoThuChiDienTu_KiemTra.Properties.Resources.bo_góc_màu_xanh;
+            this.lbDangNhap.Location = new System.Drawing.Point(347, 31);
+            this.lbDangNhap.Name = "lbDangNhap";
+            this.lbDangNhap.Size = new System.Drawing.Size(217, 42);
+            this.lbDangNhap.TabIndex = 18;
+            this.lbDangNhap.Text = "Đăng Nhập";
             // 
             // picGif
             // 
